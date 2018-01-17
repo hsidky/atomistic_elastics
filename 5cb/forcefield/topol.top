@@ -1,0 +1,18 @@
+#include "ffnonbonded.itp"
+#include "5CB.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+#include "amber99.ff/spce.itp"
+
+[system]
+5CB Cylinder
+
+[molecules]
+CB5        1600
+SOL       42000

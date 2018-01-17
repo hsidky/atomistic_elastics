@@ -1,0 +1,53 @@
+[ defaults ]
+; nbfunc   comb-rule   gen-pairs   fudgeLJ   fudgeQQ
+       1          2          yes       0.5   0.83333
+
+[ atomtypes ]
+; name   at_no     mass   charge   ptype    sigma   epsilon
+    Ny       7   14.010   0.0000       A   0.3250   0.71128
+    Cy       6   12.000   0.0000       A   0.3400   0.35982
+    Cd       6   13.008   0.0000       A   0.3475   0.29623
+    Ca       6   12.000   0.0000       A   0.3475   0.29623
+    Cm       6   14.016   0.0000       A   0.3626   0.29497
+    Ce       6   15.024   0.0000       A   0.3653   0.43932
+OW_spc       8   15.9994  0.0000       A   3.16557e-01  6.50629e-01
+HW_spc       1    1.0080  0.0000       A   0.00000e+00  0.00000e+00
+
+[ bondtypes ]
+;atom1   atom2   func      b0       kb
+    Ca      Cy      1   0.142    80249
+    Cd      Cd      1   0.141   392459
+    Ca      Cd      1   0.141   392459
+    Ca      Ca      1   0.148   392459
+    Cm      Cm      1   0.154    80249
+    Cm      Ce      1   0.154    80249
+    Cy      Ny      1   0.116   502080
+    Ca      Cm      1   0.151   265266
+
+[ angletypes ]
+; i    j    k    func    th0       cth
+ Cm   Cm   Cm      1     112.4   527.2
+ Cm   Cm   Ce      1     114.0   519.7
+ Ce   Cm   Ce      1     114.0   519.7
+ Ca   Ca   Cd      1     120.0   711.3
+ Cd   Ca   Cd      1     120.0   711.3
+ Ca   Cd   Cd      1     120.0   711.3
+ Cy   Ca   Cd      1     120.0   711.3
+ Ca   Cy   Ny      1     180.0   665.3
+ Cd   Ca   Cm      1     120.0   585.8
+ Ca   Cm   Cm      1     112.4   527.2
+
+[ dihedraltypes ]
+;  i    j    k    l   func    phase         kd    pn
+   X   Ca   Cd    X      1   180.00    11.0876    2
+   X   Cd   Cd    X      1   180.00    22.1752    2
+   X   Cm   Ca    X      1     0.00     2.0920    6
+  Ny   Cy   Ca   Cd      1   180.00     0.0000    1
+   X   Cm   Cm    X      9     0.00     2.8058    1
+   X   Cm   Cm    X      9     0.00     0.5711    2 
+   X   Cm   Cm    X      9     0.00     5.8752    3
+   X   Ca   Ca    X      9   180.00     0.0418    1
+   X   Ca   Ca    X      9   180.00     2.8953    2
+   X   Ca   Ca    X      9   180.00   0.004184    3 
+   X   Ca   Ca    X      9     0.00     4.4518    4
+

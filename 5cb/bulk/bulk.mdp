@@ -1,0 +1,53 @@
+; Run control
+integrator  = sd
+tinit       = 0
+nsteps      = 400000000
+dt          = 0.002
+comm_mode   = Linear
+nstcomm     = 1000
+
+; Ouput control
+nstxout     = 30000
+nstvout     = 30000
+nstfout     = 30000
+nstxtcout   = 30000
+nstenergy   = 30000
+
+; General options
+continuation = no
+pbc          = xyz
+gen-vel      = no
+
+; Neighbor list options
+cutoff-scheme = Verlet
+nstlist       = 20
+ns-type       = grid
+
+; Electrostatics
+coulombtype      = PME
+coulomb-modifier = Potential-shift-Verlet
+rcoulomb         = 1.2
+fourierspacing   = 0.14
+ewald-rtol       = 1e-6
+pme-order        = 4
+
+; vdW interactions
+vdwtype      = Cut-off
+vdw-modifier = Potential-shift-Verlet
+rvdw         = 1.2
+DispCorr     = No
+
+; Thermostat
+tcoupl          = Nose-hoover
+tc-grps         = System
+ref-t           = 298.15
+tau-t           = 2.0
+nh-chain-length = 1
+
+; Barostat
+pcoupl          = No
+pcoupltype      = isotropic
+ref-p           = 1.0
+tau-p           = 5.0   
+compressibility = 4.5e-5
+

@@ -1,0 +1,56 @@
+; Run control
+integrator  = md
+tinit       = 0
+nsteps      = 50000000
+dt          = 0.002
+comm_mode   = Linear
+nstcomm     = 1000
+
+; Ouput control
+nstxout     = 1000000
+nstxtcout   = 500000
+nstenergy   = 500000
+
+; General options
+continuation = no
+pbc          = xyz
+gen-vel      = no
+gen-temp     = 290.0
+
+; Constraints
+constraint_algorithm    = lincs	  ; holonomic constraints 
+constraints             = h-bonds ; all-bonds
+lincs_iter              = 1       ; accuracy of LINCS
+lincs_order             = 4       ; also related to accuracy
+
+; Neighbor list options
+cutoff-scheme = Verlet
+nstlist       = 40
+ns-type       = grid
+
+; Electrostatics
+coulombtype      = PME
+coulomb-modifier = Potential-shift-Verlet
+rcoulomb         = 1.2
+fourierspacing   = 0.16
+ewald-rtol       = 1e-6
+pme-order        = 4
+
+; vdW interactions
+vdwtype      = Cut-off
+vdw-modifier = Potential-shift-Verlet
+rvdw         = 1.2
+DispCorr     = no
+
+; Thermostat
+tcoupl          = v-rescale
+tc-grps         = System
+ref-t           = 290.15
+tau-t           = 2.0
+
+; Barostat
+pcoupl          = Parrinello-Rahman
+pcoupltype      = isotropic
+ref-p           = 1.0
+tau-p           = 10.0
+compressibility = 4.5e-5
